@@ -1,992 +1,486 @@
-Jah. Panin need loogilisse järjekorda nii, et need oleksid kasutatavad tööjuhendina.
+# VersaNIS / Frontix Integrity – SRAN seadistamine (offline)
 
+---
 
+# 1. Töö algus
 
-\---
+Holger saadab e-kirja järgmise nädala laienduste ja tööde kohta.
 
+Kirjast on näha:
 
+* millised tugijaamad (site'id) lähevad muutmisele;
+* milliseid sagedusi lisatakse (nt **L18**, **L21** jne);
+* vajadusel kommentaarid.
 
-\# VersaNIS / Frontix Integrity – SRAN seadistamine (offline)
+## Kontrolli
 
-
-
-\## 1. Töö algus
-
-
-
-\* Holger saadab e-kirja järgmise nädala laienduste ja tööde kohta.
-
-\* Kirjast on näha:
-
-
-
-&#x20; \* millised tugijaamad (site'id) lähevad muutmisele;
-
-&#x20; \* milliseid sagedusi lisatakse (nt \*\*L18, L21\*\* jne);
-
-&#x20; \* vajadusel kommentaarid.
-
-
-
-\### Kontrolli
-
-
-
-\* Kas kasutatakse õiget \*\*ASIM\*\* või \*\*ASIB\*\* süsteemimoodulit.
-
-\* Lisa õige \*\*Configuration Template (ConfiTemplate)\*\*.
-
-
+* kas kasutatakse õiget **ASIM** või **ASIB** süsteemimoodulit;
+* lisa õige **Configuration Template (ConfiTemplate)**.
 
 Näide:
 
+* Kanaküla (**KAN386**)
+* Lisatakse näiteks:
 
+  * **L18**
+  * **L21**
+  * jne
 
-\* Kanaküla (KAN386)
+---
 
-\* Lisatakse näiteks:
+# 2. Riistvara moodulid
 
-
-
-&#x20; \* L18
-
-&#x20; \* L21
-
-&#x20; \* jne.
-
-
-
-\---
-
-
-
-\# 2. Riistvara moodulid
-
-
-
-\## Madalsagedusmoodulid
-
-
+## Madalsagedusmoodulid
 
 Tavaliselt mudel:
 
-
-
-\*\*AHPMDG\*\*
-
-
+**AHPMDG**
 
 Toetavad sagedusi:
 
-
-
-\* 700 MHz
-
-\* 800 MHz
-
-\* 900 MHz
-
-
+* 700 MHz
+* 800 MHz
+* 900 MHz
 
 Tavaliselt 3 tk.
 
+---
 
-
-\---
-
-
-
-\## Kõrgsagedusmoodulid
-
-
+## Kõrgsagedusmoodulid
 
 Tavaliselt mudel:
 
+**AHEGG**
 
-
-\*\*AHEGG\*\*
-
-
+Toetavad kõrgemaid sagedusi (nt 1800/2100 MHz).
 
 Samuti tavaliselt 3 tk.
 
+---
 
+# 3. VersaNIS avamine
 
-\---
-
-
-
-\# 3. VersaNIS avamine
-
-
-
-VersaNIS = Frontix Integrity.
-
-
+**VersaNIS** = **Frontix Integrity**
 
 Baltikumi ühine tööriist.
 
-
-
 Ava:
 
-
-
-```
-
+```text
 Locations
-
-&#x20;   ↓
-
+    ↓
 372 Estonia
-
-&#x20;   ↓
-
+    ↓
 RAN
-
 ```
-
-
 
 Seal asuvad kõik SRAN-id.
 
+---
 
+# 4. Tugijaama leidmine
 
-\---
+Näiteks **Kanaküla**.
 
+* Tee aktiivseks **RAN** aken.
+* Vajuta **Ctrl + F**.
+* Otsi:
 
-
-\# 4. Tugijaama leidmine
-
-
-
-Näiteks Kanaküla.
-
-
-
-\* Tee aktiivseks RAN aken.
-
-\* Vajuta \*\*Ctrl + F\*\*.
-
-\* Otsi:
-
-
-
-```
-
+```text
 KAN386
-
 ```
-
-
 
 või
 
-
-
-```
-
+```text
 62996
-
 ```
-
-
 
 Avaneb vastav tugijaam.
 
+---
 
-
-\---
-
-
-
-\# 5. Equipment puu
-
-
+# 5. Equipment puu
 
 Mine:
 
-
-
-```
-
+```text
 KAN386
-
-&#x20;   ↓
-
+    ↓
 All Equipment
-
 ```
-
-
 
 Seal on kaks põhiosa.
 
-
-
-\## Cabinet
-
-
+## Cabinet
 
 Sisaldab:
 
+* süsteemimoodulit;
+* Baseband Unit (**BBU**).
 
-
-\* süsteemimoodulit
-
-\* Baseband Unit (BBU)
-
-
-
-\---
-
-
-
-\## Mast
-
-
+## Mast
 
 Sisaldab:
 
+* raadiomooduleid (**Radio Modules**).
 
+---
 
-\* raadiomooduleid (Radio Modules)
-
-
-
-\---
-
-
-
-\# 6. Vana konfiguratsiooni eemaldamine
-
-
+# 6. Vana konfiguratsiooni eemaldamine
 
 Mine masti ossa.
 
-
-
 Paremklõps:
 
-
-
-```
-
+```text
 Remove conn. from equipment and child
-
 ```
-
-
 
 See eemaldab:
 
-
-
-\* optikaühendused
-
-\* süsteemimooduli ja raadiomooduli vahel.
-
-
+* optikaühendused;
+* süsteemimooduli ja raadiomooduli vahelised ühendused.
 
 Pärast seda:
 
-
-
-\* kustuta mastiosa.
-
-
+* kustuta mastiosa.
 
 Vajadusel tee uuesti:
 
-
-
-```
-
+```text
 Remove connections
-
 ```
-
-
 
 või
 
-
-
-```
-
+```text
 Delete
-
 ```
 
+Kui valmis, siis on riistvara vanast konfiguratsioonist puhas.
 
+**NB!** Tegemist on ainult **offline muudatusega**, mitte võrgu muudatusega.
 
-Kui valmis, siis:
+---
 
-
-
-\*\*Kanaküla riistvara on vanast konfiguratsioonist puhas.\*\*
-
-
-
-See on ainult \*\*offline muudatus\*\*, mitte võrgu muudatus.
-
-
-
-\---
-
-
-
-\# 7. Uue Equipment Template lisamine
-
-
+# 7. Uue Equipment Template lisamine
 
 Mine:
 
-
-
-```
-
+```text
 Secondary Tree View
-
-&#x20;   ↓
-
+    ↓
 Equipment Templates
-
-&#x20;   ↓
-
+    ↓
 372 Estonia
-
-&#x20;   ↓
-
+    ↓
 RAN
-
-&#x20;   ↓
-
+    ↓
 Cabinet / Frame
-
-&#x20;   ↓
-
+    ↓
 AS (AirScale)
-
 ```
-
-
 
 Levinud template:
 
-
-
-```
-
+```text
 3SectorAS N7 New Eq
-
 ```
-
-
 
 See sisaldab tavaliselt:
 
-
-
-\* kõik LTE sagedused
-
-\* GSM900
-
-\* 5G N700
-
-
+* kõik LTE sagedused;
+* GSM900;
+* 5G N700.
 
 Template peal klõpsates saab alumisest aknast vaadata:
 
+* mooduleid;
+* raadioid;
+* süsteemimooduleid.
 
+---
 
-\* moodulid
-
-\* raadiod
-
-\* süsteemimoodulid
-
-
-
-\---
-
-
-
-\# 8. Template paigaldamine
-
-
+# 8. Template paigaldamine
 
 Haara template hiirega.
 
-
-
 Lohista:
 
-
-
-```
-
+```text
 KAN386
-
 ```
-
-
 
 peale.
 
-
-
 Sellega luuakse uus riistvara.
 
+---
 
-
-\---
-
-
-
-\# 9. BSSInfo kontroll
-
-
+# 9. BSSInfo kontroll
 
 Leia:
 
-
-
-```
-
+```text
 LNBTS-140386
-
 ```
 
-
-
-See on:
-
-
-
-4G eNodeB ID.
-
-
+See on **4G eNodeB ID**.
 
 See number tuleb hiljem profiili lisada.
 
+---
 
-
-\---
-
-
-
-\# 10. eNodeB ID määramine
-
-
+# 10. eNodeB ID määramine
 
 Mine:
 
-
-
-```
-
+```text
 All Equipment
-
-&#x20;   ↓
-
+    ↓
 Cabinet
-
-&#x20;   ↓
-
+    ↓
 Shelf
-
-&#x20;   ↓
-
+    ↓
 Profile
-
 ```
-
-
 
 Leia:
 
-
-
-```
-
+```text
 ENodeBId
-
 ```
 
+Paremklõps:
 
-
-Paremklõps
-
-
-
-```
-
+```text
 Update Parameter
-
 ```
-
-
 
 Sisesta:
 
-
-
-```
-
+```text
 140386
-
 ```
-
-
 
 Pärast seda on shelf näiteks:
 
-
-
-```
-
+```text
 BBU04
-
 ```
 
+---
 
-
-\---
-
-
-
-\# 11. Functional Network avamine
-
-
+# 11. Functional Network avamine
 
 Mine:
 
-
-
-```
-
+```text
 Shelf
-
-&#x20;   ↓
-
+    ↓
 Profile
-
-&#x20;   ↓
-
+    ↓
 Network Element
-
 ```
-
-
 
 Paremklõps:
 
-
-
-```
-
+```text
 Go to Functional Network
-
 ```
-
-
 
 Avaneb näiteks:
 
-
-
-```
-
+```text
 KAN386-BBU04-001
-
 ```
 
+---
 
-
-\---
-
-
-
-\# 12. Cellide parandamine
-
-
+# 12. Cellide parandamine
 
 Template loob vaikimisi:
 
-
-
-```
-
+```text
 A
-
 B
-
 C
-
 ```
-
-
 
 Aga võrgu järgi peab olema:
 
-
-
-```
-
+```text
 A
-
 B
-
 D
-
 ```
-
-
 
 Seega:
 
-
-
-\* asenda C → D
-
-
+* asenda **C → D**.
 
 Vajadusel:
 
-
-
-```
-
+```text
 Update Interface
-
 ```
-
-
 
 ja muuda viimased numbrid vastavaks.
 
+---
 
-
-\---
-
-
-
-\# 13. Layered Network
-
-
+# 13. Layered Network
 
 Üleval:
 
-
-
-```
-
+```text
 Layered Network
-
 ```
-
-
 
 Seal on:
 
-
-
-\* 2G
-
-\* 4G
-
-\* 5G
-
-
+* 2G
+* 4G
+* 5G
 
 Need määravad, millised tehnoloogiad kasutavad sama SRAN-i.
 
-
-
-\---
-
-
-
-\## 2G lisamine
-
-
+## 2G lisamine
 
 Mine:
 
-
-
-```
-
+```text
 2G
-
-&#x20;   ↓
-
+    ↓
 Layered Network Elements
-
 ```
-
-
 
 Leia:
 
-
-
-```
-
+```text
 KAN386
-
 ```
 
-
-
-(vajadusel Refresh)
-
-
+(vajadusel **Refresh**)
 
 Paremklõps:
 
-
-
-```
-
+```text
 Relate LNE to Equipment
-
 ```
-
-
 
 Vali:
 
+**Type**
 
-
-Type:
-
-
-
-```
-
+```text
 Shelf
-
 ```
 
+**Label**
 
-
-Label:
-
-
-
-```
-
+```text
 BBU04
-
 ```
 
+Vajuta **OK**.
 
+---
 
-OK.
-
-
-
-\---
-
-
-
-\## 4G ja 5G lisamine
-
-
+## 4G ja 5G lisamine
 
 Mine:
 
-
-
-```
-
+```text
 4G
-
 ```
-
-
 
 ja
 
-
-
-```
-
+```text
 5G
-
 ```
-
-
 
 Paremklõps:
 
-
-
-```
-
+```text
 Add Layered Network Element Ex
-
 ```
 
+Täida:
 
+**Location Name**
 
-Location Name:
-
-
-
-```
-
+```text
 KAN386
-
 ```
 
+**Equipment**
 
-
-Equipment:
-
-
-
-```
-
+```text
 Shelf
-
 ```
 
+Vajuta **OK**.
 
+Kui küsib järgmisi layereid:
 
-OK.
-
-
-
-Kui küsib järgmisi layer'eid:
-
-
-
-```
-
+```text
 No
-
 ```
 
+---
 
-
-\---
-
-
-
-\# 14. CMDB Sync
-
-
+# 14. CMDB Sync
 
 Ava veebis:
 
-
-
-```
-
+```text
 NEM RAN BALTICS
-
 ```
-
-
 
 Mine:
 
-
-
-```
-
+```text
 Tools
-
-&#x20;   ↓
-
+    ↓
 Configuration Management Database Sync (CMDB Sync)
-
 ```
-
-
 
 Vajuta:
 
-
-
-```
-
+```text
 Trigger
-
 ```
-
-
 
 See:
 
+* küsib VersaNIS-ist andmed;
+* uuendab CMDB-d vastavalt tehtud muudatustele.
 
+---
 
-\* küsib VersaNIS-ist andmed;
+# 15. Tabeli täitmine
 
-\* uuendab CMDB vastavalt tehtud muudatustele.
+Kui NIS-is on töö valmis, märgi tabelisse:
 
-
-
-\---
-
-
-
-\# 15. Tabeli täitmine
-
-
-
-Kui NIS-is on töö valmis:
-
-
-
-märgi tabelisse:
-
-
-
-```
-
+```text
 Y
-
 ```
 
+---
 
+# Kiire töövoog
 
-\---
-
-
-
-\# Kiire töövoog
-
-
-
-1\. Vaata Holgeri e-kiri.
-
-2\. Kontrolli lisatavad sagedused.
-
-3\. Leia site VersaNIS-ist.
-
-4\. Kustuta vana riistvara.
-
-5\. Lohista õige AirScale template.
-
-6\. Lisa eNodeB ID.
-
-7\. Ava Functional Network.
-
-8\. Paranda cellid (ABC → ABD).
-
-9\. Seo 2G, 4G ja 5G Layered Networkiga.
-
-10\. Käivita CMDB Sync.
-
-11\. Märgi töö tabelis tehtuks (`Y`).
-
-
-
-Sellisel kujul on märkmed juba üsna lähedal samm-sammulisele tööjuhendile, mida saad uue SRAN-i seadistamisel lihtsalt järjekorras läbi teha.
-
-
-
+1. Vaata Holgeri e-kiri.
+2. Kontrolli lisatavad sagedused.
+3. Leia site VersaNIS-ist.
+4. Kustuta vana riistvara.
+5. Lohista õige AirScale template.
+6. Lisa eNodeB ID.
+7. Ava Functional Network.
+8. Paranda cellid (**ABC → ABD**).
+9. Seo 2G, 4G ja 5G Layered Networkiga.
+10. Käivita CMDB Sync.
+11. Märgi töö tabelis tehtuks (**Y**).
