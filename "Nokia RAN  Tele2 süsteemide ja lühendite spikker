@@ -1,0 +1,163 @@
+Jah. Ma teeks selle pigem ühe suure "Nokia RAN / Tele2 süsteemide ja lühendite spikri", kus kõik on kategooriates. Selline on tavaliselt ka kõige lihtsam õppida.
+
+---
+
+# 📚 Nokia RAN / Tele2 süsteemid ja lühendid
+
+## 1. Võrgu planeerimine (NIS)
+
+**Küsimus:** *Mis peaks võrgus olemas olema?*
+
+| Süsteem               | Tähendus                 | Milleks kasutatakse                  |
+| --------------------- | ------------------------ | ------------------------------------ |
+| **NIS**               | Network Inventory System | Võrgu inventar ja disain             |
+| **VersaNIS**          | NIS tarkvara             | Võrgu planeerimine                   |
+| **Frontix Integrity** | NIS tarkvara             | Võrgu inventar, topoloogia ja disain |
+
+---
+
+## 2. Võrgu haldus (NMS)
+
+**Küsimus:** *Mis võrgus praegu toimub?*
+
+| Süsteem         | Tähendus                  | Milleks kasutatakse  |
+| --------------- | ------------------------- | -------------------- |
+| **NMS**         | Network Management System | Võrgu haldus         |
+| **NetAct**      | Nokia NMS                 | Võrgu haldamine      |
+| **MantaRay NM** | Nokia uus NMS             | NetActi uus põlvkond |
+| **NM**          | Network Management        | Võrguhaldus          |
+
+---
+
+## 3. Konfiguratsioon (CM)
+
+**Küsimus:** *Kuidas ma võrku muudan?*
+
+| Süsteem       | Tähendus                 | Milleks kasutatakse                         |
+| ------------- | ------------------------ | ------------------------------------------- |
+| **CM**        | Configuration Management | Konfiguratsiooni haldus                     |
+| **CM Editor** | Configuration Editor     | Parameetrite muutmine                       |
+| **NAC**       | NetAct Configurator      | Konfiguratsiooni tegemine ja võrku saatmine |
+
+---
+
+## 4. Võrguelemendid
+
+**Need on päris seadmed mastis.**
+
+| Lühend    | Tähendus                             |
+| --------- | ------------------------------------ |
+| **MRBTS** | Multi Radio Base Transceiver Station |
+| **LNBTS** | LTE Base Station                     |
+| **NRBTS** | NR (5G) Base Station                 |
+| **BTS**   | 2G Base Station                      |
+
+---
+
+## 5. Riistvara
+
+**Need on baasjaama sees olevad füüsilised moodulid.**
+
+| Lühend   | Milleks                                   |
+| -------- | ----------------------------------------- |
+| **ABIO** | Basebandi protsessorimoodul               |
+| **ABIN** | Basebandi protsessorimoodul               |
+| **ABIP** | Basebandi protsessorimoodul               |
+| **ABIQ** | Basebandi protsessorimoodul               |
+| **ASIB** | AirScale System Module (varasem põlvkond) |
+| **ASIM** | AirScale System Module (uuem põlvkond)    |
+| **FSMF** | RF moodul (Remote Radio Head)             |
+
+---
+
+## 6. Raadioside
+
+| Lühend  | Tähendus                           |
+| ------- | ---------------------------------- |
+| EARFCN  | LTE sageduskanali number           |
+| NRARFCN | 5G sageduskanali number            |
+| PCI     | Physical Cell Identity             |
+| TAC     | Tracking Area Code                 |
+| ECGI    | LTE Cell ID                        |
+| NCGI    | 5G Cell ID                         |
+| VSWR    | Antenni ja kaabli sobivuse näitaja |
+
+---
+
+## 7. Automaatika
+
+| Lühend | Tähendus                     |
+| ------ | ---------------------------- |
+| ANR    | Automatic Neighbour Relation |
+| SON    | Self Organizing Network      |
+
+---
+
+## 8. Tööde haldus
+
+| Süsteem           | Milleks                             |
+| ----------------- | ----------------------------------- |
+| Traffica          | Muudatuste planeerimine             |
+| Traffica Insights | Raportid                            |
+| TIM               | Tööde haldus                        |
+| BMC ITSM          | Incidentid, Change'id ja Request'id |
+
+---
+
+## 9. Dokumentatsioon
+
+| Süsteem  | Milleks                |
+| -------- | ---------------------- |
+| Teletark | Juhendid               |
+| Tellus   | SharePoint             |
+| NOLS     | Nokia dokumentatsioon  |
+| BSS Info | Võrgu info ja otsingud |
+
+---
+
+## 10. Site'i info
+
+| Süsteem       | Milleks                |
+| ------------- | ---------------------- |
+| Click On Site | Site'i fotod ja andmed |
+| Site Presence | Site'i staatus         |
+| Eden-Net      | Võrgu ülevaade         |
+
+---
+
+# Kogu tööprotsess
+
+```text
+Projekt / Disain
+        │
+        ▼
+Frontix Integrity / VersaNIS
+(NIS)
+        │
+        ▼
+Offline SRAN konfiguratsioon
+        │
+        ▼
+NetAct / MantaRay NM
+(NMS)
+        │
+        ▼
+NAC / CM Editor
+(CM)
+        │
+        ▼
+MRBTS
+        │
+        ├── ASIM / ASIB
+        ├── ABIQ / ABIP / ABIN / ABIO
+        └── RF moodulid
+        │
+        ▼
+LTE / NR kärjed
+        │
+        ▼
+Monitooring
+(NetAct, BSS Info, KPI, VSWR)
+```
+
+---
