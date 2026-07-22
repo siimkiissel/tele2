@@ -1,4 +1,4 @@
-# Nokia NetAct / MantaRay NM – kiirmärkmed
+# Nokia NetAct / MantaRay NM
 
 ## 1. NetAct ja MantaRay NM
 
