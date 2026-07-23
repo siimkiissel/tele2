@@ -1,6 +1,7 @@
 # Tugijaama integreerimine NetActi (MantaRay Integration Wizard)
 
 ## Eesmärk
+<img width="936" height="877" alt="image (1)" src="https://github.com/user-attachments/assets/c2592e13-ba36-4e2f-ab0a-79c9d535150f" />
 
 Integreerimise eesmärk on lisada uus Nokia SRAN tugijaam NetActi võrguhaldusesse, et seda oleks võimalik hallata, monitoorida ja seadistada.
 
