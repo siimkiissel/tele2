@@ -112,22 +112,52 @@ See dokument koondab olulisemad Nokia RAN, LTE, 5G ja NetActi terminid ühte koh
 | **Drop Call Rate** | — | Katkenud kõnede osakaal. |
 | **Handover Success Rate** | — | Õnnestunud handover'ite osakaal. |
 
-## Sagedusribad
+# Sagedusribad
 
-Siin on tabel ainult nende sagedustega, mida **Tele2 Eesti reaalselt kasutab** oma 2G, 4G ja 5G võrgus. Lisasin ka **FDD/TDD** veeru. Andmed vastavad Tele2 tehnilise võrguinfo lehele. ([Tele2][1])
+Siin on tabel ainult nende sagedustega, mida **Tele2 Eesti reaalselt kasutab** oma 2G, 4G ja 5G võrgus. Lisasin ka **FDD/TDD** veeru. Andmed vastavad Tele2 tehnilise võrguinfo lehele.
 
-| Lühend / mõiste | Täisnimi | Duplex  | Kirjeldus                                                                             |
-| --------------- | -------- | ------- | ------------------------------------------------------------------------------------- |
-| **GSM900**      | GSM 900  | **FDD** | 2G võrk 900 MHz sagedusel. Kasutatakse peamiselt kõnedeks ja IoT/M2M seadmetele.      |
-| **B1**          | LTE2100  | **FDD** | 4G LTE 2100 MHz. Hea kompromiss leviala ja mahutavuse vahel.                          |
-| **B3**          | LTE1800  | **FDD** | 4G LTE 1800 MHz. Tele2 peamine LTE mahutavussagedus.                                  |
-| **B8**          | LTE900   | **FDD** | 4G LTE 900 MHz. Hea leviala ja siselevi.                                              |
-| **B20**         | LTE800   | **FDD** | 4G LTE 800 MHz. Väga hea maapiirkondade ja hoonete sisene leviala.                    |
-| **n1**          | NR2100   | **FDD** | 5G NR 2100 MHz. Kasutatakse DSS-i või eraldiseisva NR kandjana.                       |
-| **n28**         | NR700    | **FDD** | 5G NR 700 MHz. Väga suur leviala ja hea siselevi.                                     |
-| **n40**         | NR2300   | **TDD** | 5G NR 2300 MHz. Lisamahutavus suurema liiklusega piirkondades.                        |
-| **n78**         | NR3500   | **TDD** | 5G NR 3500 MHz. Tele2 peamine suure kiiruse ja mahutavusega 5G sagedus.               |
-| **n258**        | NR26GHz  | **TDD** | 5G mmWave 26 GHz. Väga suur kiirus, kuid väga väike leviala; kasutatakse erijuhtudel. |
+## 2G GSM
+
+| Band       | Täisnimi | Tele2 sagedus | Duplex | Tele2 kasutatav sagedusplokk                     | Kirjeldus                                          |
+| ---------- | -------- | ------------- | ------ | ------------------------------------------------ | -------------------------------------------------- |
+| **GSM900** | GSM 900  | **900 MHz**   | FDD    | **DL 936.7–948.1 MHz**<br>**UL 891.7–903.1 MHz** | 2G võrk kõnede, SMS-ide ja IoT/M2M seadmete jaoks. |
+
+---
+
+## 4G LTE (E-UTRA)
+
+| Band    | Täisnimi | Tele2 sagedus | Duplex | Tele2 kasutatav sagedusplokk                         | Kirjeldus                                                        |
+| ------- | -------- | ------------- | ------ | ---------------------------------------------------- | ---------------------------------------------------------------- |
+| **B20** | LTE800   | **800 MHz**   | FDD    | **DL 811–821 MHz**<br>**UL 852–862 MHz**             | Väga hea maapiirkondade katvus ja siselevi.                      |
+| **B8**  | LTE900   | **900 MHz**   | FDD    | **DL 936.7–948.1 MHz**<br>**UL 891.7–903.1 MHz**     | Hea leviala ja siselevi. Kasutab sama sagedusplokki nagu GSM900. |
+| **B3**  | LTE1800  | **1800 MHz**  | FDD    | **DL 1830.1–1854.9 MHz**<br>**UL 1735.1–1759.9 MHz** | Tele2 peamine LTE mahutavussagedus.                              |
+| **B1**  | LTE2100  | **2100 MHz**  | FDD    | **DL 2110–2140 MHz**<br>**UL 1920–1950 MHz**         | Lisamahutavus ning Carrier Aggregation.                          |
+
+> **Märkus:** Tele2-l puudub Eestis LTE Band 7 (2600 MHz FDD).
+
+---
+
+## 5G NR (New Radio)
+
+| Band     | Täisnimi | Tele2 sagedus | Duplex | Tele2 kasutatav sagedusplokk                                            | Kirjeldus                                               |
+| -------- | -------- | ------------- | ------ | ----------------------------------------------------------------------- | ------------------------------------------------------- |
+| **n28**  | NR700    | **700 MHz**   | FDD    | **DL 758–768 MHz**<br>**UL 703–713 MHz**                                | Üleriigiline 5G leviala ja hea siselevi.                |
+| **n1**   | NR2100   | **2100 MHz**  | FDD    | **DL 2110–2140 MHz**<br>**UL 1920–1950 MHz**                            | 5G DSS või eraldiseisev NR kandja.                      |
+| **n40**  | NR2300   | **2300 MHz**  | TDD    | **2300–2360 MHz**                                                       | Suurem mahutavus suure liiklusega piirkondades.         |
+| **n78**  | NR3500   | **3500 MHz**  | TDD    | **3540–3600 MHz** ja **3730–3800 MHz** *(pärast refarmi 3670–3800 MHz)* | Tele2 peamine suure kiiruse ja mahutavusega 5G sagedus. |
+| **n258** | NR26GHz  | **26 GHz**    | TDD    | **24.7–25.5 GHz**                                                       | mmWave. Väga suur kiirus, kuid väga väike leviala.      |
+
+---
+
+### Tele2 kasutab lisaks ka järgmisi litsentse
+
+| Band          | Sagedus      | Duplex | Kasutus             |                                                                                                |
+| ------------- | ------------ | ------ | ------------------- | ---------------------------------------------------------------------------------------------- |
+| **B39 / n39** | **1900 MHz** | TDD    | **1910.2–1920 MHz** | Eestis kasutatakse väga piiratud ulatuses. Tavapärastes Tele2 makrojaamades üldiselt ei kohta. |
+| **B38**       | **2600 MHz** | TDD    | -                   | Tele2-l Eestis aktiivset kasutust praktiliselt ei ole.                                         |
+| **B7**        | **2600 MHz** | FDD    | -                   | Tele2-l Eestis puudub kasutus.                                                                 |
+
+See tabel vastab Tele2 Eesti tegelikele sagedusplokkidele ning on sobiv kasutada Nokia SRAN, NetActi ja MantaRay konfiguratsioonide juures. Samuti on sellest lihtne aru saada, millised bandid kasutavad sama sagedusressurssi (näiteks **GSM900 ↔ LTE B8** ja **LTE B1 ↔ NR n1** DSS-i korral).
 
 ### FDD vs TDD
 
