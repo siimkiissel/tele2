@@ -2,8 +2,7 @@
 
 ## Eesmärk
 
-RET (Remote Electrical Tilt) võimaldab muuta antenni elektrilist
-kaldenurka kaugjuhtimise teel ilma masti ronimata.
+RET (Remote Electrical Tilt) muudab antenni elektrilist kaldenurka, ilma et antenni füüsilist asendit muudetaks. Antenni korpus jääb samasse asendisse, kuid antenni kiirgusdiagrammi suunatakse elektrooniliselt üles- või allapoole. See mõjutab kõiki sagedusi ja tehnoloogiaid, mis kasutavad seda antenni (nt 2G, 4G ja 5G), kui need on ühendatud sama antenni külge.
 
 Enne RET väärtuste seadistamist tuleb MantaRay NM-is siduda õiged RET-id
 (ALD-d) õigete antenniportide ja raadiomoodulitega.
@@ -183,8 +182,6 @@ järgi.
 -   NR1800
 -   NR2100
 -   NR3500
-
-RET (Remote Electrical Tilt) muudab antenni elektrilist kaldenurka, ilma et antenni füüsilist asendit muudetaks. Antenni korpus jääb samasse asendisse, kuid antenni kiirgusdiagrammi suunatakse elektrooniliselt üles- või allapoole. See mõjutab kõiki sagedusi ja tehnoloogiaid, mis kasutavad seda antenni (nt 2G, 4G ja 5G), kui need on ühendatud sama antenni külge.
 
 ------------------------------------------------------------------------
 
