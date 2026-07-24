@@ -114,17 +114,25 @@ See dokument koondab olulisemad Nokia RAN, LTE, 5G ja NetActi terminid ühte koh
 
 ## Sagedusribad
 
-| Lühend / mõiste | Täisnimi | Kirjeldus |
-|---|---|---|
-| **B1** | LTE2100 | 2100 MHz LTE. |
-| **B3** | LTE1800 | 1800 MHz LTE. |
-| **B7** | LTE2600 | 2600 MHz LTE. |
-| **B8** | LTE900 | 900 MHz LTE. |
-| **B20** | LTE800 | 800 MHz LTE. |
-| **B38** | LTE2600 TDD | 2600 MHz TDD. |
-| **B40** | LTE2300 | 2300 MHz TDD. |
-| **n1** | NR2100 | 5G 2100 MHz. |
-| **n3** | NR1800 | 5G 1800 MHz. |
-| **n28** | NR700 | 5G 700 MHz. |
-| **n40** | NR2300 | 5G 2300 MHz. |
-| **n78** | NR3500 | 5G 3500 MHz. |
+Siin on tabel ainult nende sagedustega, mida **Tele2 Eesti reaalselt kasutab** oma 2G, 4G ja 5G võrgus. Lisasin ka **FDD/TDD** veeru. Andmed vastavad Tele2 tehnilise võrguinfo lehele. ([Tele2][1])
+
+| Lühend / mõiste | Täisnimi | Duplex  | Kirjeldus                                                                             |
+| --------------- | -------- | ------- | ------------------------------------------------------------------------------------- |
+| **GSM900**      | GSM 900  | **FDD** | 2G võrk 900 MHz sagedusel. Kasutatakse peamiselt kõnedeks ja IoT/M2M seadmetele.      |
+| **B1**          | LTE2100  | **FDD** | 4G LTE 2100 MHz. Hea kompromiss leviala ja mahutavuse vahel.                          |
+| **B3**          | LTE1800  | **FDD** | 4G LTE 1800 MHz. Tele2 peamine LTE mahutavussagedus.                                  |
+| **B8**          | LTE900   | **FDD** | 4G LTE 900 MHz. Hea leviala ja siselevi.                                              |
+| **B20**         | LTE800   | **FDD** | 4G LTE 800 MHz. Väga hea maapiirkondade ja hoonete sisene leviala.                    |
+| **n1**          | NR2100   | **FDD** | 5G NR 2100 MHz. Kasutatakse DSS-i või eraldiseisva NR kandjana.                       |
+| **n28**         | NR700    | **FDD** | 5G NR 700 MHz. Väga suur leviala ja hea siselevi.                                     |
+| **n40**         | NR2300   | **TDD** | 5G NR 2300 MHz. Lisamahutavus suurema liiklusega piirkondades.                        |
+| **n78**         | NR3500   | **TDD** | 5G NR 3500 MHz. Tele2 peamine suure kiiruse ja mahutavusega 5G sagedus.               |
+| **n258**        | NR26GHz  | **TDD** | 5G mmWave 26 GHz. Väga suur kiirus, kuid väga väike leviala; kasutatakse erijuhtudel. |
+
+### FDD vs TDD
+
+| Duplex                              | Selgitus                                                                                                                                                                                         |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **FDD (Frequency Division Duplex)** | Üleslink (UL) ja allalink (DL) kasutavad **kahte erinevat sagedust**. Sobib hästi suure levialaga võrkudele ning on kasutusel enamikul 2G ja 4G sagedustest ning ka 5G n1 ja n28 puhul.          |
+| **TDD (Time Division Duplex)**      | Üleslink ja allalink kasutavad **sama sagedust**, kuid erinevatel ajahetkedel. Võimaldab paindlikult jagada DL/UL mahtu ning sobib hästi suure läbilaskevõimega 5G sagedustele (n40, n78, n258). |.
+
